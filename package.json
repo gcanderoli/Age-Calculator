@@ -1,7 +1,11 @@
 {
-  "name": "test-intive",
+  "name": "Age calculator",
   "version": "0.0.0",
   "license": "MIT",
+  "author":{
+    "name": "Gabriel Canderoli",
+    "url": "https:github.com/gcanderoli"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

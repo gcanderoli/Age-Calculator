@@ -3,15 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { DataGetterService } from '../data-getter.service';
 import { isDate } from 'util';
 
-
 @Component({
-  selector: 'app-salute',
-  templateUrl: './salute.component.html',
-  styleUrls: ['./salute.component.scss']
+  selector: 'app-calculator',
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.scss']
 })
-export class SaluteComponent implements OnInit {
+export class CalculatorComponent implements OnInit {
   dataCountries = null;
-  countrie;
+  country;
   mesSalute = false;
   history = [];
   nombre;
@@ -33,8 +32,8 @@ export class SaluteComponent implements OnInit {
 
   getDataCountries() { // Obtiene la lista de paises.
     this.dataService.getData()
-      .subscribe(datas => {
-        this.dataCountries = datas;
+      .subscribe(data => {
+        this.dataCountries = data;
       });
   }
 
@@ -68,9 +67,9 @@ export class SaluteComponent implements OnInit {
 
   salute() { // saludo principal del form
     if (!this.dontSave) {
-      if (this.nombre && !isNaN(this.dia) && this.countrie) {
+      if (this.nombre && !isNaN(this.dia) && this.country) {
         this.error = false;
-        this.pais = this.countrie;
+        this.pais = this.country;
         this.fecha = this.selectedDate;
         const newHistory = [this.nombre, this.dateFormated, this.pais, this.fecha];
         this.history.push(newHistory);
@@ -84,7 +83,7 @@ export class SaluteComponent implements OnInit {
     }
   }
 
-  salute2(item) { // Saludo desde el historial
+  saluteHistory(item) { // Saludo desde el historial
     this.dontSave = true;
     this.nombre = item[0];
     this.pais = item[2];

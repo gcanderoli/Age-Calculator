@@ -5,14 +5,14 @@ import { HttpModule} from '@angular/http';
 
 
 import { AppComponent } from './app.component';
-import { SaluteComponent } from './salute/salute.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 import { DataGetterService } from "./data-getter.service";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SaluteComponent
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <div class="box">
 
-  <h1>Ejercicio Intive</h1>
+  <h1>Calculadora de edad</h1>
   <h3>Gabriel Canderoli</h3>
 
   <form class="form">
@@ -10,24 +10,24 @@
     </div>
     <div class="clearBoth"></div>
     <div class="inputForm">
-      <label for="countrie">País</label>
-      <select [(ngModel)]="countrie" name="countrie">
+      <label for="country">País</label>
+      <select [(ngModel)]="country" name="country">
         <option value=""></option>
-        <option *ngFor="let x of dataCountries" [value]="x.name" [selected]="countrie == x.name">{{x.name}}</option>
+        <option *ngFor="let thisCountry of dataCountries" [value]="thisCountry.name" [selected]="country == thisCountry.name">{{thisCountry.name}}</option>
       </select>
     </div>
     <div class="clearBoth"></div>
     <div class="inputForm">
-      <label for="age">Edad</label>
+      <label for="age">Fecha de nacimiento</label>
       <input name="age" [ngModel]="selectedDate | date:'yyyy-MM-dd'" (ngModelChange)="selectedDate = $event" type="date" name="selectedDate"
       />
     </div>
     <div class="clearBoth"></div>
-    <button type="reset" (click)="processData(inputName.value)">Saludar</button>
+    <button type="reset" (click)="processData(inputName.value)">Calcular</button>
   </form>
 
   <div class="history">
-    <h5>Visitantes anteriores</h5>
+    <h5>Saludos anteriores</h5>
     <ul *ngIf="history">
       <li *ngFor="let item of history" (click)='salute2(item)'>{{item[0]}}-{{item[2]}}-{{item[1]}}</li>
     </ul>
@@ -38,6 +38,6 @@
   <p *ngIf="error" class="errorMsg">Por favor verifique ingresar todos los datos.</p>
 
   <p *ngIf="!error && mesSalute" class="saludo">
-    Hola {{nombre}} de {{pais}}. El {{dia}} de {{mes}} tendrás {{anos}}.
+    Hola {{nombre}} de {{pais}}. El {{dia}} de {{mes}} tendrás {{anos}} años.
   </p>
 </div>
