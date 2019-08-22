@@ -42,7 +42,6 @@ export class CalculatorComponent implements OnInit {
     this.formatDate(this.selectedDate);
   }
 
-
   formatDate(date) { // Formateo de fechas.
     const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
     const fecha = new Date(date);
@@ -56,12 +55,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   calculateAge(fecha) { // Calcula la edad.
-    const today = new Date();
-    const hoy = Date.now();
-    const fechaNum = Date.parse(fecha);
-    const year = today.getFullYear();
-    const edad = Math.round((hoy - fechaNum) / 31536000000);
-    this.anos = edad + 1;
+    this.anos =  Math.floor((new Date() - new Date(fecha).getTime()) / 31557600000 + 1) //31557600000 año en milisegundos.
     this.salute();
   }
 

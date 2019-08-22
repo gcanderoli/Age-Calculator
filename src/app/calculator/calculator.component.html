@@ -29,7 +29,7 @@
   <div class="history">
     <h5>Saludos anteriores</h5>
     <ul *ngIf="history">
-      <li *ngFor="let item of history" (click)='salute2(item)'>{{item[0]}}-{{item[2]}}-{{item[1]}}</li>
+      <li *ngFor="let item of history" (click)='saluteHistory(item)'>{{item[0]}}-{{item[2]}}-{{item[1]}}</li>
     </ul>
   </div>
 
