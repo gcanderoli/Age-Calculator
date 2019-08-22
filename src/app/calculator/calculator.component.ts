@@ -18,7 +18,7 @@ export class CalculatorComponent implements OnInit {
   pais;
   mes;
   dia;
-  anos;
+  anos: number;
   dateFormated;
   selectedDate;
   error = false;
@@ -55,7 +55,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   calculateAge(fecha) { // Calcula la edad.
-    this.anos =  Math.floor((new Date() - new Date(fecha).getTime()) / 31557600000 + 1) //31557600000 año en milisegundos.
+    this.anos =  Math.floor((new Date().getTime() - new Date(fecha).getTime()) / 31557600000 + 1) //31557600000 año en milisegundos.
     this.salute();
   }
 
