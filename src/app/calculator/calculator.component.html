@@ -1,4 +1,4 @@
-<div class="box">
+<div class="box" *ngIf="dataCountries; else loading">
 
   <h1>Calculadora de edad</h1>
   <h3>Gabriel Canderoli</h3>
@@ -13,14 +13,15 @@
       <label for="country">País</label>
       <select [(ngModel)]="country" name="country">
         <option value=""></option>
-        <option *ngFor="let thisCountry of dataCountries" [value]="thisCountry.name" [selected]="country == thisCountry.name">{{thisCountry.name}}</option>
+        <option *ngFor="let thisCountry of dataCountries" [value]="thisCountry.name"
+          [selected]="country == thisCountry.name">{{thisCountry.name}}</option>
       </select>
     </div>
     <div class="clearBoth"></div>
     <div class="inputForm">
       <label for="age">Fecha de nacimiento</label>
-      <input name="age" [ngModel]="selectedDate | date:'yyyy-MM-dd'" (ngModelChange)="selectedDate = $event" type="date" name="selectedDate"
-      />
+      <input name="age" [ngModel]="selectedDate | date:'yyyy-MM-dd'" (ngModelChange)="selectedDate = $event" type="date"
+        name="selectedDate" />
     </div>
     <div class="clearBoth"></div>
     <button type="reset" (click)="processData(inputName.value)">Calcular</button>
@@ -41,3 +42,5 @@
     Hola {{nombre}} de {{pais}}. El {{dia}} de {{mes}} tendrás {{anos}} años.
   </p>
 </div>
+
+<ng-template #loading>Loading...</ng-template>
