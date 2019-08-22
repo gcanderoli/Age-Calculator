@@ -4,9 +4,10 @@ Simple app to calculate the age based on birthdate, using Angular 5 and https://
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
 
-## Install
+## Start
 
-Run `npm install` to install all depencies.
+Clone the repo.
+Open the folder on a terminal and run `npm install` to install all depencies.
 
 ## Development server
 
