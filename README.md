@@ -1,6 +1,12 @@
-# TestIntive
+# Age calculator
+
+Simple app to calculate the age based on birthdate, using Angular 5 and https://restcountries.eu/ api.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
+
+## Install
+
+Run `npm install` to install all depencies.
 
 ## Development server
 
